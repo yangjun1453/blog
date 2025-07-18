@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+html,
+body {
+  height: 100%;
+  background-color: #ffb9a3;
+}
+#app {
+  height: 100%;
+}
+* {
+  box-sizing: border-box;
+  font-family: "Cardo", serif;
+}
