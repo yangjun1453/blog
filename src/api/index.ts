@@ -50,10 +50,10 @@ export async function SignOut(): Promise<void> {
 }
 
 // 添加博客内容
-export async function Addcs(id: string, content: string): Promise<void> {
+export async function AddBlog(id: string, content: string,title:string): Promise<void> {
   const { error } = await supabase
     .from("blog")
-    .insert({ user_id: id, content: content });
+    .insert({ user_id: id, content: content ,title:title});
 
   if (error) {
     throw new Error(error.message);

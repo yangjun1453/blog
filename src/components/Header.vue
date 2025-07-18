@@ -1,59 +1,93 @@
 <script setup>
-import { onMounted, reactive, ref } from 'vue';
-import {SignUp,RetrieveUser,SignOut,SignIn,Addcs,QueryMyBlogs} from '../api/index.ts'
+import { onMounted, ref } from "vue";
+import {
+  SignUp,
+  RetrieveUser,
+  SignOut,
+  SignIn,
+ 
+  QueryMyBlogs,
+} from "../api/index.ts";
+
+const my_modal_3 = ref(null);
+const my_modal_4 = ref(null);
+
 const handleRegisterClick = () => {
-  my_modal_3.showModal();
+  my_modal_4.value?.showModal();
 };
 const handleLoginClick = () => {
-  my_modal_4.showModal();
+  my_modal_3.value?.showModal();
 };
 
-const onRegister = async()=>{
-    SignUp(form.value.email,form.value.password)
-}
-const onLogin =async(email,password)=>{
-  const data= await SignIn(email,password)
-  console.log(data,'登录成功');
-}
-const email =ref('')
-const password =ref('')
-
 const form = ref({
-  email:'',
-  password:''
+  email: "",
+  password: "",
+});
+const email = ref("");
+const password = ref("");
 
-})
+const myBlogs = ref([]); // 保存查询到的博客
+const userdata = ref(null);
 
-const myBlogs = ref([]) // 保存查询到的博客
-const userdata = ref({})
 
-onMounted(async () => {
+// 查询用户和博客
+const fetchUserAndBlogs = async () => {
   const { user } = await RetrieveUser();
-  console.log(user);
-  userdata.value = user;
+  userdata.value = user || null;
 
   if (user) {
-    const blogs = await QueryMyBlogs(user.id);
-    myBlogs.value = blogs;
-    
+    myBlogs.value = await QueryMyBlogs(user.id);
+  } else {
+    myBlogs.value = [];
   }
+};
+
+onMounted(() => {
+  fetchUserAndBlogs();
 });
 
-const out = ()=>{
-  SignOut()
-}
+const onRegister = async (e) => {
+  e.preventDefault();
+  try {
+    await SignUp(form.value.email, form.value.password);
+    alert("注册成功，请登录");
+    my_modal_4.value?.close();
+  } catch (err) {
+    alert(err.message);
+  }
+};
 
-const test =async (id,content,)=>{
- await Addcs(id,content)
- 
-}
-const content = ref('')
+const onLogin = async (e) => {
+  e.preventDefault();
+  try {
+    await SignIn(email.value, password.value);
+    alert("登录成功");
+    my_modal_3.value?.close();
+    await fetchUserAndBlogs();
+  } catch (err) {
+    alert(err.message);
+  }
+};
+
+const out = async () => {
+  try {
+    await SignOut();
+    userdata.value = null;
+    myBlogs.value = [];
+  } catch (err) {
+    alert(err.message);
+  }
+};
+
+
 
 </script>
 
 <template>
-  <div class="grid grid-cols-4 p-7 text-sm md:text-xl font-bold text-shadow-lg">
-    <div class="col-span-1 text-2xl">June</div>
+
+  <!-- 导航栏 -->
+  <div class="grid md:grid-cols-4 grid-cols-5 p-7 text-sm md:text-xl font-bold text-shadow-lg">
+    <div class="md:col-span-1 text-2xl hidden md:block">June</div>
     <div class="col-span-3 md:col-span-2">
       <ul class="flex text-center">
         <li class="flex-1">
@@ -71,70 +105,69 @@ const content = ref('')
       </ul>
     </div>
 
-    <div class="col-span-1 flex justify-end">
-      <p class="mr-10" @click="handleLoginClick">Login</p>
-      <p class="" @click="handleRegisterClick">Register</p>
-    </div>
 
-    <p>{{userdata.email? userdata.email:'未登录' }}</p>
-    <p>上次登录时间:{{userdata.last_sign_in_at?new Date(userdata.last_sign_in_at).toLocaleString("zh-CN", { hour12: false }):''}}</p>
+   <div class="md:col-span-1 flex justify-end col-span-2 items-center gap-4">
+  <!-- 如果已登录 -->
+  <template v-if="userdata">
+    <span class="text-sm  truncate max-w-[160px]">{{ userdata.email }}</span>
+    <p class="cursor-pointer  hover:underline" @click="out">Logout</p>
+  </template>
 
-    <button @click="out(userdata.id,content)">退出登录</button>
-
-
-     <textarea class="textarea" placeholder="Bio"  v-model="content"></textarea>
-
-  
-  <input type="text" placeholder="Type here" class="input" />
-
-  <button @click="test(userdata.id,content)">发布</button>
-  </div>
-<div class="mt-10">
-  <h2 class="text-lg font-bold mb-2">我的博客</h2>
-  <ul>
-    <li v-for="(blog, index) in myBlogs" :key="blog.id" class="mb-4 border p-3 rounded">
-      <p class="text-sm text-gray-500">发布时间: {{ new Date(blog.created_at).toLocaleString("zh-CN", { hour12: false }) }}</p>
-      <p class="mt-1">{{ blog.content }}</p>
-    </li>
-  </ul>
+  <!-- 如果未登录 -->
+  <template v-else>
+    <p class="cursor-pointer" @click="handleLoginClick">Login</p>
+    <p class="cursor-pointer" @click="handleRegisterClick">Register</p>
+  </template>
 </div>
 
-  <div>
-    <!-- You can open the modal using ID.showModal() method -->
-    
 
-    <dialog id="my_modal_4" class="modal">
-      <div class="modal-box">
-        <form method="dialog">
-          <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-            ✕
-          </button>
-        </form>
-      <div>
-        <input type="email" class="input" placeholder="Type here"  v-model="form.email"  />
-        <input type="password" class="input" placeholder="Type here"  v-model="form.password"/>
-        <button class="btn" @click="onRegister">zhuce</button>
-      </div>
-      </div>
-    </dialog>
-    
-
-      <dialog id="my_modal_3" class="modal">
-      <div class="modal-box">
-        <form method="dialog">
-          <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-            ✕
-          </button>
-        </form>
-      <div>
-        <input type="email" class="input" placeholder="Type here"  v-model="email"  />
-        <input type="password" class="input" placeholder="Type here"  v-model="password"/>
-        <button class="btn" @click="onLogin(email,password)">登录</button>
-      </div>
-      </div>
-    </dialog>
   </div>
-  
+
+  <dialog id="my_modal_4" ref="my_modal_4" class="modal">
+
+    <div class="modal-box">
+      <form @submit="onRegister" method="dialog">
+        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" type="button"
+          @click="my_modal_4.close()">
+          ✕
+        </button>
+
+        <div class="flex flex-col items-center gap-2">
+          <h1 class="text-3xl">Register</h1>
+
+          <input type="email" class="input" placeholder="Email address" v-model="form.email" required />
+          <input type="password" class="input" placeholder="Password" v-model="form.password" required />
+          <button class="btn" type="submit">Sign Up</button>
+        </div>
+      </form>
+
+    </div>
+
+
+
+  </dialog>
+
+
+
+  <dialog id="my_modal_3" ref="my_modal_3" class="modal">
+    <div class="modal-box">
+      <form @submit="onLogin" method="dialog">
+        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" type="button"
+          @click="my_modal_3.close()">
+          ✕
+        </button>
+
+        <div class="flex flex-col items-center gap-2">
+          <h1 class="text-3xl">Login</h1>
+          <input type="email" class="input" placeholder="Email address" v-model="email" required />
+          <input type="password" class="input" placeholder="Password" v-model="password" required />
+          <button class="btn" type="submit">Sign In</button>
+        </div>
+      </form>
+    </div>
+
+
+  </dialog>
 </template>
 
 <style scoped></style>
