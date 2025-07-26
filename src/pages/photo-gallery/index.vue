@@ -1,12 +1,18 @@
 <template>
   <div>
-    
-    photo demo
+    <img :src="avatarUri" alt="Avatar" class=" rounded-full " />
   </div>
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue'
+import { getAvatarDataUri } from '../../api'
+
+const avatarUri = ref('')
+
+onMounted(async () => {
+  avatarUri.value = await getAvatarDataUri('user12323') // seed 可自定义
+})
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

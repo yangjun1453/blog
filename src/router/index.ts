@@ -5,6 +5,7 @@ const routes = [
   {
     path: "/",
     component: Layout,
+
     children: [
       {
         path: "about",
@@ -17,9 +18,9 @@ const routes = [
         component: () => import("../pages/blogs/index.vue"),
       },
       {
-        path: "vlog",
-        name: "vlog",
-        component: () => import("../pages/vlog/index.vue"),
+        path: "vlogs",
+        name: "vlogs",
+        component: () => import("../pages/vlogs/index.vue"),
       },
       {
         path: "photogallery",

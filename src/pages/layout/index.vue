@@ -1,21 +1,23 @@
 <template>
-  <div class="h-full flex flex-col">
-    <Header></Header>
+  <div class="h-full flex flex-col ">
+    <Header ></Header>
 
-    <div class="flex flex-1">
-      <div class="fixed left-10 bottom-20 hidden md:block">
-        <SideBar />
-      </div>
+    <div class="h-full">
 
-      <div class="md:flex-1 md:pl-10 md:pr-5 md:py-10 md:ml-25 mx-auto">
-        <div
-          class="text-4xl w-full h-full shadow-2xl rounded-4xl overflow-hidden bg-[#FF8058]/60 border-2 border-black p-2">
-          <RouterView></RouterView>
-        </div>
+
+
+      <div class="lg:flex-1  md:pr-5  md:ml-50  text-4xl lg:ml-20 rounded-4xl overflow-hidden  p-2 h-full">
+
+        <RouterView></RouterView>
+
       </div>
     </div>
-    <Footer></Footer>
-    
+    <Footer class="hidden md:block"></Footer>
+    <NavBar class=" fixed bottom-0 md:hidden  block" />
+    <div class="fixed md:left-10 left-7 md:bottom-20  bottom-25">
+
+      <SideBar />
+    </div>
   </div>
 </template>
 
@@ -23,7 +25,7 @@
 import Header from "../../components/Header.vue";
 import SideBar from "../../components/SideBar.vue";
 import Footer from "../../components/Footer.vue";
-
+import NavBar from "../../components/NavBar.vue";
 </script>
 
 <style scoped></style>

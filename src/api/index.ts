@@ -1,8 +1,22 @@
 import { supabase } from "../lib/supabaseClient";
-
+import { createAvatar } from '@dicebear/core';
+import { bigSmile } from '@dicebear/collection';
 // 注册
 export async function SignUp(email: string, password: string): Promise<any> {
-  const { data, error } = await supabase.auth.signUp({ email, password });
+  const { data, error } = await supabase.auth.signUp({
+
+    email,
+    password,
+    options: {
+      data: {
+        avatar: await getAvatarDataUri(email)
+      }
+    }
+
+
+
+
+  });
 
   if (error) {
     throw new Error(error.message);
@@ -50,10 +64,10 @@ export async function SignOut(): Promise<void> {
 }
 
 // 添加博客内容
-export async function AddBlog(id: string, content: string,title:string): Promise<void> {
+export async function AddBlog(id: string, content: string, title: string): Promise<void> {
   const { error } = await supabase
     .from("blog")
-    .insert({ user_id: id, content: content ,title:title});
+    .insert({ user_id: id, content: content, title: title });
 
   if (error) {
     throw new Error(error.message);
@@ -72,4 +86,15 @@ export async function QueryMyBlogs(userId: string): Promise<any[]> {
   }
 
   return data;
+}
+
+
+
+// 获取头像 
+export async function getAvatarDataUri(email: string) {
+  return await createAvatar(bigSmile, {
+    seed: email,
+    size: 70,
+    backgroundType: ['gradientLinear'],
+  }).toDataUri();
 }
