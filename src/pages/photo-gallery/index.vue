@@ -2,6 +2,7 @@
   <div>
     <img :src="avatarUri" alt="Avatar" class=" rounded-full " />
   </div>
+  <h2>YC 你看尼玛呢</h2>
 </template>
 
 <script setup>
