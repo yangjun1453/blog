@@ -2,7 +2,7 @@
 
   <h1 class="block md:hidden">June</h1>
   <div class="lg:flex h-full lg:items-center   lg:justify-evenly md:gap-10">
-    <div class="h-90  md:h-100 lg:h-120 mt-10 lg:mr-10 px-10 ">
+    <div class="h-40 md:h-100 lg:h-120 mt-10 lg:mr-10 px-10 ">
       <img src="/bg3.jpg" alt=""
         class="w-full md:w-[550px]  max-h-full object-cover object-[50%_47%] opacity-85 rounded-3xl " />
 
