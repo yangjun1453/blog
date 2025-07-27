@@ -2,7 +2,7 @@
     <div class=" bg-[#FF9776] w-full h-[77px] rounded-t-3xl flex justify-between items-center px-[33px] text-sm ">
         <div class="flex flex-col  items-center gap-2 flex-1 h-full justify-center  rounded-2xl hover:bg-[#FF9F81]  hover:translate-y-[-30px]  transition-transform duration-300 ease-out "
             @click="navigateTo('/about')">
-            <img v-if="user" :src=user.user_metadata.avatar alt=""" class=" w-[28px] h-[28px] ">
+            <img v-if="user" :src="user.user_metadata.avatar" alt="" class=" w-[28px] h-[28px] ">
             <PhUser v-else :size="28" weight="fill" color="#343a40" />
             <p>Me!</p>
         </div>

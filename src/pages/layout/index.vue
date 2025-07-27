@@ -13,7 +13,7 @@
       </div>
     </div>
     <Footer class="hidden md:block"></Footer>
-    <NavBar class=" fixed bottom-0 md:hidden  block" />
+    <NavBar class="fixed bottom-0 md:hidden  block" />
     <div class="fixed md:left-10 left-7 md:bottom-20  bottom-30">
 
       <SideBar />
