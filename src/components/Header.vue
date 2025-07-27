@@ -74,21 +74,22 @@ onMounted(() => {
 
 
   <!-- 导航栏 -->
-  <div class="md:grid md:grid-cols-4 grid-cols-5 p-7 text-sm md:text-xl font-bold text-shadow-lg hidden ">
-    <div class="md:col-span-1 text-2xl hidden md:block">June</div>
-    <div class="col-span-3 md:col-span-2">
+  <div
+    class="md:grid md:grid-cols-4 grid-cols-5 p-7 text-sm md:text-md lg:text-xl font-bold text-shadow-lg hidden  items-center   ">
+    <div class="md:col-span-1 text-2xl hidden md:block  text-[#0d0d0d]">June</div>
+    <div class="col-span-3 md:col-span-2 ">
       <ul class="flex text-center">
         <li class="flex-1 hover:underline underline-offset-4">
-          <RouterLink to="/about">About</RouterLink>
+          <RouterLink class=" text-[#0d0d0d]" to="/about">About</RouterLink>
         </li>
         <li class="flex-1 hover:underline underline-offset-4">
-          <RouterLink to="/vlogs">Vlogs</RouterLink>
+          <RouterLink class=" text-[#0d0d0d]" to="/vlogs">Vlogs</RouterLink>
         </li>
         <li class="flex-1 hover:underline underline-offset-4">
-          <RouterLink to="/blogs">Blogs</RouterLink>
+          <RouterLink class=" text-[#0d0d0d]" to="/blogs">Blogs</RouterLink>
         </li>
         <li class="flex-1 hover:underline underline-offset-4">
-          <RouterLink to="/photogallery">Photo Gallery</RouterLink>
+          <RouterLink class=" text-[#0d0d0d]" to="/photogallery">Photo Gallery</RouterLink>
         </li>
       </ul>
     </div>
@@ -97,15 +98,18 @@ onMounted(() => {
     <div class="md:col-span-1 flex justify-end col-span-2 items-center gap-4">
       <!-- 如果已登录 -->
       <template v-if="user">
-        <span class="text-sm  truncate max-w-[160px]">{{ user.email }}</span>
+        <span class="text-sm   text-[#0d0d0d] truncate max-w-[160px]">{{ user.email }}</span>
         <img :src=user.user_metadata.avatar alt="">
-        <p class="cursor-pointer  hover:underline" @click="out">Logout</p>
+        <div class="cursor-pointer   rounded-2xl bg-[#faae2b] px-5 py-2 text-[#00473e] hover:bg-[#fcc419]" @click="out">
+          Logout</div>
       </template>
 
       <!-- 如果未登录 -->
       <template v-else>
-        <p class="cursor-pointer" @click="my_modal_3.showModal()">Login</p>
-        <p class="cursor-pointer" @click="my_modal_4.showModal()">Register</p>
+        <div class="cursor-pointer  shadow-2xl  rounded-2xl bg-[#faae2b] px-5 py-2 text-[#00473e] hover:bg-[#fcc419] "
+          @click="my_modal_3.showModal()">Login</div>
+        <div class="cursor-pointer  rounded-2xl bg-[#faae2b] px-5 py-2 text-[#00473e] hover:bg-[#fcc419] "
+          @click="my_modal_4.showModal()">Register</div>
       </template>
     </div>
   </div>

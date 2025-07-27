@@ -1,12 +1,12 @@
 <template>
-  <div class="flex flex-col gap-5">
-    <PhInstagramLogo :size="30" color="#343a40" weight="fill"
+  <div v-if="isAboutPage" class="flex flex-col gap-5  ">
+    <PhInstagramLogo :size="30" color="#00473e" weight="fill"
       class="hover:scale-110 hover:-translate-y-1 transition-transform duration-300" />
-    <PhX :size="30" weight="fill" color="#343a40"
+    <PhX :size="30" weight="fill" color="#00473e"
       class="hover:scale-110 hover:-translate-y-1 transition-transform duration-300" />
-    <PhWechatLogo :size="30" color="#343a40" weight="fill"
+    <PhWechatLogo :size="30" color="#00473e" weight="fill"
       class="hover:scale-110 hover:-translate-y-1 transition-transform duration-300" />
-    <PhYoutubeLogo :size="30" color="#343a40" weight="fill"
+    <PhYoutubeLogo :size="30" color="#00473e" weight="fill"
       class="hover:scale-110 hover:-translate-y-1 transition-transform duration-300" />
   </div>
 </template>
@@ -17,6 +17,12 @@ import {
   PhX,
   PhInstagramLogo,
 } from "@phosphor-icons/vue";
-
+import { useRoute } from "vue-router";
+import { onMounted, ref } from "vue";
+const route = useRoute();
+import { computed } from "vue";
+const isAboutPage = computed(() => {
+  return route.path === "/about";
+});
 </script>
 <style scoped></style>

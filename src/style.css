@@ -4,7 +4,7 @@
 html,
 body {
   height: 100%;
-  background-color: #ffb9a3;
+  background-color: #eff0f3;
 }
 
 #app {
@@ -13,5 +13,5 @@ body {
 
 * {
   box-sizing: border-box;
-  font-family: "Cardo", serif, "Inter", sans-serif;
+  font-family: "Cardo", "Source Sans 3";
 }
