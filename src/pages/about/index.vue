@@ -12,8 +12,8 @@
 
       <div class="flex">
         <div class="border-b-3 mt-7 py-2 w-[307px]">
-          <h2 class="font-bold text-3xl text-[#343a40]">Hi There!</h2>
-          <h1 class=" text-5xl lg:text-7xl">It's John Doe.</h1>
+          <h2 class="font-bold text-2xl text-[#343a40]">Hi There!</h2>
+          <h1 class=" text-3xl lg:text-7xl">It's John Doe.</h1>
         </div>
 
       </div>
