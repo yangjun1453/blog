@@ -1,6 +1,6 @@
 <template>
   <div class="h-full flex flex-col ">
-    <Header ></Header>
+    <Header></Header>
 
     <div class="h-full">
 
@@ -14,7 +14,7 @@
     </div>
     <Footer class="hidden md:block"></Footer>
     <NavBar class=" fixed bottom-0 md:hidden  block" />
-    <div class="fixed md:left-10 left-7 md:bottom-20  bottom-25">
+    <div class="fixed md:left-10 left-7 md:bottom-20  bottom-30">
 
       <SideBar />
     </div>
