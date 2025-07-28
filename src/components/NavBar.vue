@@ -1,24 +1,24 @@
 <template>
     <div class=" bg-[#a5d8ff] w-full h-[77px] rounded-t-3xl flex justify-between items-center px-[33px] text-sm ">
-        <div class="flex flex-col  items-center gap-2 flex-1 h-full justify-center  rounded-2xl active:bg-[#74c0fc]  active:translate-y-[-30px]  transition-transform duration-300 ease-out "
+        <div class="flex flex-col  items-center  flex-1 h-full justify-center  rounded-2xl active:bg-[#74c0fc]  active:translate-y-[-30px]  transition-transform duration-300 ease-out "
             @click="navigateTo('/about')">
             <img v-if="user" :src="user.user_metadata.avatar" alt="" class=" w-[28px] h-[28px] ">
             <PhUser v-else :size="28" weight="fill" color="#343a40" />
             <p>Me!</p>
         </div>
-        <div class="flex flex-col  items-center gap-2 flex-1 h-full justify-center  rounded-2xl hover:bg-[#74c0fc]  hover:translate-y-[-15px]  transition-transform duration-300 ease-out "
+        <div class="flex flex-col  items-center  flex-1 h-full justify-center  rounded-2xl hover:bg-[#74c0fc]  hover:translate-y-[-15px]  transition-transform duration-300 ease-out "
             @click="navigateTo('/vlogs')">
             <PhYoutubeLogo :size="28" weight="fill" color="#343a40" />
             <p>Vlogs</p>
         </div>
-        <div class="flex flex-col  items-center gap-2 flex-1 h-full justify-center  rounded-2xl hover:bg-[#74c0fc]  hover:translate-y-[-15px]  transition-transform duration-300 ease-out "
+        <div class="flex flex-col  items-center  flex-1 h-full justify-center  rounded-2xl hover:bg-[#74c0fc]  hover:translate-y-[-15px]  transition-transform duration-300 ease-out "
             @click="navigateTo('/blogs')">
 
 
             <PhArticle :size="28" weight="fill" color="#343a40" />
             <p>Blogs</p>
         </div>
-        <div class="flex flex-col  items-center gap-2 flex-1 h-full justify-center  rounded-2xl hover:bg-[#74c0fc]  hover:translate-y-[-15px]  transition-transform duration-300 ease-out "
+        <div class="flex flex-col  items-center  flex-1 h-full justify-center  rounded-2xl hover:bg-[#74c0fc]  hover:translate-y-[-15px]  transition-transform duration-300 ease-out "
             @click="navigateTo('/photogallery')">
             <PhImage :size="28" weight="fill" color="#343a40" />
             <p>Photos</p>

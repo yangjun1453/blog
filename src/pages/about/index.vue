@@ -9,7 +9,7 @@
 
     <div class="  w-70  mx-auto">
 
-      <div class="w-100">
+      <div class="lg:w-100">
         <div class=" mt-7 py-2 mx-auto">
           <h2 class="font-bold text-2xl text-[#343a40] ">Hi There!</h2>
           <span class=" text-4xl  lg:text-6xl border-b-3  ">It's John Doe.</span>
