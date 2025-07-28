@@ -2,7 +2,7 @@
   <div class=" h-full flex flex-col  ">
     <Header class="sticky top-0 z-50 bg-white shadow-md" />
 
-    <div class=" w-full flex-1 overflow-auto flex flex-col">
+    <div class=" w-full flex-1 overflow-auto lg:flex lg:flex-col">
 
 
 
