@@ -6,11 +6,11 @@
 
 
 
-      <div class="lg:flex-1  md:pr-5   text-4xl rounded-4xl overflow-hidden  p-2 h-full relative  ">
+      <div class="lg:flex-1  md:pr-5    rounded-4xl   p-2 h-full relative  ">
 
         <RouterView></RouterView>
 
-        <div class="absolute md:left-10 left-7 md:bottom-20  bottom-30">
+        <div class="absolute md:left-10 left-7 md:bottom-20  bottom-30   ">
 
           <SideBar />
         </div>
