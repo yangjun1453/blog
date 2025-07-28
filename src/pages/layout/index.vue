@@ -11,7 +11,7 @@
 
         <RouterView class="flex-1"></RouterView>
 
-        <div class="absolute md:left-10 left-7 md:bottom-20  bottom-30   ">
+        <div class="absolute md:left-10 left-3 md:bottom-20  bottom-30   ">
 
           <SideBar />
         </div>
