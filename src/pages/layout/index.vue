@@ -2,12 +2,12 @@
   <div class=" h-full flex flex-col  ">
     <Header class="sticky top-0 z-50 bg-white shadow-md" />
 
-    <div class=" w-full flex-1 overflow-auto lg:flex lg:flex-col">
+    <div class=" w-full flex-1 overflow-auto lg:flex flex flex-col">
 
 
 
       <div
-        class="lg:flex-1  md:pr-5  md:w-3/4 md:mx-auto  lg:w-3/4  lg:mx-auto  rounded-4xl   p-2  relative flex flex-col  ">
+        class=" md:pr-5  md:w-3/4 md:mx-auto  lg:w-3/4  lg:mx-auto  rounded-4xl   p-2  relative flex flex-col flex-1   ">
 
         <RouterView class="flex-1"></RouterView>
 

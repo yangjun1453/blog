@@ -1,7 +1,7 @@
 <template>
 
   <h1 class="block md:hidden">June</h1>
-  <div class="lg:flex h-full lg:items-center lg:justify-evenly  md:items-center    md:gap-20  md:ml-30">
+  <div class="lg:flex h-full lg:items-center lg:justify-evenly  md:items-center   md:gap-20  md:ml-30">
     <div class="h-40 md:h-70 lg:h-90 mt-10 w-70 md:w-100 lg:w-120 mx-auto  lg:mx-0">
       <img src="/bg3.jpg" alt="" class="w-full  max-h-full object-cover object-[50%_47%] opacity-85 rounded-3xl " />
 
