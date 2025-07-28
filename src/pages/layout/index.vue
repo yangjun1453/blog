@@ -7,7 +7,7 @@
 
 
       <div
-        class=" md:pr-5  md:w-3/4 md:mx-auto  lg:w-3/4  lg:mx-auto  rounded-4xl   p-2  relative flex flex-col flex-1   ">
+        class=" md:pr-5  md:w-3/4 md:mx-auto  lg:w-3/4  lg:mx-auto  rounded-4xl   p-2  relative flex flex-col flex-1 pb-20  ">
 
         <RouterView class="flex-1"></RouterView>
 
