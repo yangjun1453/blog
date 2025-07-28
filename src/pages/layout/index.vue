@@ -1,12 +1,13 @@
 <template>
-  <div class="h-full flex flex-col  md:w-3/4 md:mx-auto  lg:w-3/4  lg:mx-auto">
-    <Header></Header>
+  <div class=" h-full flex flex-col  ">
+    <Header class="sticky top-0 z-50 bg-white shadow-md" />
 
-    <div class="h-full w-full">
+    <div class=" w-full flex-1 overflow-auto">
 
 
 
-      <div class="lg:flex-1  md:pr-5    rounded-4xl   p-2 h-full relative  ">
+      <div
+        class="lg:flex-1  md:pr-5  md:w-3/4 md:mx-auto  lg:w-3/4  lg:mx-auto  rounded-4xl   p-2 h-full relative flex flex-col ">
 
         <RouterView></RouterView>
 
