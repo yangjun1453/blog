@@ -15,7 +15,7 @@
         <a rel="noopener noreferrer" href="#" class="flex items-center">
           <img src="https://source.unsplash.com/50x50/?portrait" alt="avatar"
             class="object-cover w-10 h-10 mx-4 rounded-full bg-gray-500">
-          <span class="hover:underline text-gray-600">Leroy Jenkins</span>
+          <span class="hover:underline text-gray-600">Leroy Jenkin</span>
         </a>
       </div>
     </div>
