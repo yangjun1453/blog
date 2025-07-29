@@ -9,13 +9,13 @@
       <div
         class=" md:pr-5  md:w-3/4 md:mx-auto  lg:w-3/4  lg:mx-auto  rounded-4xl   p-2  relative flex flex-col flex-1 pb-20  ">
 
-        <RouterView class="flex-1"></RouterView>
+        <RouterView></RouterView>
 
         <div class="absolute md:left-10 left-3 md:bottom-20  bottom-30   ">
 
           <SideBar />
         </div>
-        <Footer class="hidden md:block"></Footer>
+
       </div>
       <NavBar class=" fixed bottom-0 md:hidden  block" />
     </div>
@@ -27,7 +27,7 @@
 <script setup>
 import Header from "../../components/Header.vue";
 import SideBar from "../../components/SideBar.vue";
-import Footer from "../../components/Footer.vue";
+
 import NavBar from "../../components/NavBar.vue";
 </script>
 
