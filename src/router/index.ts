@@ -5,7 +5,8 @@ const routes = [
   {
     path: "/",
     component: Layout,
-
+    redirect: "/about",
+    name: "home",
     children: [
       {
         path: "about",
