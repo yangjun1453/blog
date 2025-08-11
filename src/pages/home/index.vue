@@ -1,5 +1,5 @@
 <template>
-    <div class=" w-[270px] mx-auto md:mt-[228px] mt-[166px] flex flex-col justify-between items-center gap-10">
+    <div class=" w-[270px] mx-auto md:mt-[228px] mt-[120px] flex flex-col justify-between items-center gap-10">
 
         <div class="avatar mx-auto">
             <div class="w-24 rounded-full">
