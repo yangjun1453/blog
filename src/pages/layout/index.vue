@@ -25,7 +25,7 @@
           <RouterLink class="  px-12 py-3 inline-block  hover:bg-[#3F51B5]  hover:text-white" to="/about"
             @click="toggleSidebar">About
           </RouterLink>
-          <RouterLink class="  px-12 py-3 inline-block  hover:bg-[#3F51B5]  hover:text-white" to="/photogallery"
+          <RouterLink class="  px-12 py-3 inline-block  hover:bg-[#3F51B5]  hover:text-white" to="/blogs"
             @click="toggleSidebar">Blog
           </RouterLink>
 

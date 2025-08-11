@@ -3,6 +3,7 @@
 import { useUserStore } from "../store/user.js";
 import { storeToRefs } from "pinia";
 import { onMounted, ref } from "vue";
+import { PhUser, PhShoppingCart } from "@phosphor-icons/vue";
 const userStore = useUserStore();
 const { user, blogs, email, password, isLoginDialogVisible, isRegisterDialogVisible } = storeToRefs(userStore);
 const loading = ref(false);
@@ -59,7 +60,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class=" hidden md:block ">
+  <div class=" hidden md:block w-1/2 mx-auto  ">
     <!-- 登陆成功提示框 -->
     <div role="alert" class="alert alert-success w-1/2 mx-auto" v-if="loginSuccess">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
@@ -74,26 +75,47 @@ onMounted(() => {
 
 
     <!-- 导航栏 -->
-    <div class="  w-[285px] mx-auto max-w-full mt-[45px]">
+    <div class="   mx-auto max-w-full mt-[45px] flex justify-between items-center">
+      <div>June</div>
 
-
-      <ul class=" flex text-center gap-[45px]">
-        <li class="flex-1  text-[#1A1A1A]  underline-offset-4  hover:bg-[#3F51B5] px-3 py-1 hover:text-white ">
+      <ul class=" flex text-center gap-[45px] items-center">
+        <li class=" text-[#1A1A1A]  underline-offset-4  hover:bg-[#3F51B5] px-3 py-1 hover:text-white ">
           <RouterLink class="  " to="/home">Home</RouterLink>
         </li>
-        <li class="flex-1   text-[#1A1A1A] underline-offset-4  hover:bg-[#3F51B5] px-3 py-1 hover:text-white">
+        <li class="  text-[#1A1A1A] underline-offset-4  hover:bg-[#3F51B5] px-3 py-1 hover:text-white">
           <RouterLink class="" to="/about">About</RouterLink>
         </li>
-        <li class="flex-1   text-[#1A1A1A]  underline-offset-4  hover:bg-[#3F51B5] px-3 py-1 hover:text-white">
-          <RouterLink class="" to="/photogallery">Blog</RouterLink>
+        <li class="  text-[#1A1A1A]  underline-offset-4  hover:bg-[#3F51B5] px-3 py-1 hover:text-white">
+          <RouterLink class="" to="/blogs">Blog</RouterLink>
         </li>
-        <!-- <li class="flex-1 hover:underline underline-offset-4">
-          <RouterLink class=" text-[#1A1A1A]" to="/blogs">Blogs</RouterLink>
+        <!-- <li>
+          <PhUser :size="20" @click="my_modal_3.showModal()"/>
         </li>
-        <li class="flex-1 hover:underline underline-offset-4">
-          <RouterLink class=" text-[#1A1A1A]" to="/photogallery">Photo Gallery</RouterLink>
+        <li>
+          <PhShoppingCart :size="20" />
         </li> -->
       </ul>
+      <div class="md:col-span-1 flex justify-end col-span-2 items-center gap-4 ">
+        <!-- 如果已登录 -->
+        <template v-if="user">
+          <span class="text-sm   text-[#1A1A1A] truncate max-w-[160px]">{{ user.email }}</span>
+          <img :src=user.user_metadata.avatar alt="">
+          <div class="cursor-pointer   hover:text-white    hover:bg-[#3F51B5] px-3 py-1 text-[#1A1A1A]" @click="out">
+            Logout</div>
+        </template>
+
+        <!-- 如果未登录 -->
+        <template v-else>
+          <div class="cursor-pointer    hover:text-white  px-3 py-1 text-[#1A1A1A]  hover:bg-[#3F51B5] "
+            @click="my_modal_3.showModal()">
+            Login
+          </div>
+          <div class="cursor-pointer  px-3 py-1 text-[#1A1A1A]   hover:text-white hover:bg-[#3F51B5] "
+            @click="my_modal_4.showModal()">
+            Register
+          </div>
+        </template>
+      </div>
 
 
 
