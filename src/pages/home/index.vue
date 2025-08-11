@@ -1,9 +1,5 @@
 <template>
     <div class=" w-[270px] mx-auto md:mt-[228px] mt-[166px] flex flex-col justify-between items-center gap-10">
-        <div class=" absolute top-3 right-2">
-            <PhList :size="40" weight="thin" />
-            <PhX :size="40" weight="thin" />
-        </div>
 
         <div class="avatar mx-auto">
             <div class="w-24 rounded-full">
@@ -19,8 +15,11 @@
 <script setup>
 import { ref } from 'vue';
 import SideBar from '../../components/SideBar.vue';
-import { PhList } from '@phosphor-icons/vue';
+import { PhList, PhX } from '@phosphor-icons/vue';
 const isOpen = ref(false)
+const toggleSidebar = () => {
+    isOpen.value = !isOpen.value;
+}
 </script>
 
 <style scoped></style>
