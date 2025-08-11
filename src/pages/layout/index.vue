@@ -1,23 +1,20 @@
 <template>
   <div class=" h-full flex flex-col  ">
-    <Header class="sticky top-0 z-50 bg-white shadow-md" />
+    <Header class="sticky top-0 z-50 " />
 
     <div class=" w-full flex-1 overflow-auto lg:flex flex flex-col">
 
 
 
       <div
-        class=" md:pr-5  md:w-3/4 md:mx-auto  lg:w-3/4  lg:mx-auto  rounded-4xl   p-2  relative flex flex-col flex-1 pb-20  ">
+        class=" md:pr-5  md:w-3/4 md:mx-auto  lg:w-1/2  lg:mx-auto  rounded-4xl   p-2  relative flex flex-col flex-1 pb-20  ">
 
         <RouterView></RouterView>
 
-        <div class="absolute md:left-10 left-3 md:bottom-20  bottom-30   ">
-
-          <SideBar />
-        </div>
-
+        <div class="divider mt-20 bg"></div>
+        <p class="mx-auto mt-10 text-[13px]">© 2025 Jun’s Blog. All rights reserved.</p>
       </div>
-      <NavBar class=" fixed bottom-0 md:hidden  block" />
+
     </div>
 
 
@@ -28,7 +25,7 @@
 import Header from "../../components/Header.vue";
 import SideBar from "../../components/SideBar.vue";
 
-import NavBar from "../../components/NavBar.vue";
+
 </script>
 
 <style scoped></style>

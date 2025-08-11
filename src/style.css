@@ -6,7 +6,7 @@
 html,
 body {
   height: 100%;
-  background-color: #eff0f3;
+  
 }
 
 #app {
@@ -15,5 +15,5 @@ body {
 
 * {
   box-sizing: border-box;
-  font-family: "Cardo", "Source Sans 3";
+  font-family: "Roboto Mono","Source Sans 3";
 }

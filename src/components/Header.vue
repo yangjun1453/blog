@@ -59,7 +59,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="  ">
+  <div class=" hidden md:block ">
     <!-- 登陆成功提示框 -->
     <div role="alert" class="alert alert-success w-1/2 mx-auto" v-if="loginSuccess">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
@@ -74,45 +74,30 @@ onMounted(() => {
 
 
     <!-- 导航栏 -->
-    <div
-      class="md:grid md:grid-cols-4 grid-cols-5 p-7 text-sm md:text-md lg:text-xl font-bold text-shadow-lg hidden  items-center   ">
-      <div class="md:col-span-1 text-2xl hidden md:block  text-[#0d0d0d]">June</div>
-      <div class="col-span-3 md:col-span-2 ">
-        <ul class="flex text-center">
-          <li class="flex-1 hover:underline underline-offset-4">
-            <RouterLink class=" text-[#0d0d0d]" to="/about">About</RouterLink>
-          </li>
-          <li class="flex-1 hover:underline underline-offset-4">
-            <RouterLink class=" text-[#0d0d0d]" to="/vlogs">Vlogs</RouterLink>
-          </li>
-          <li class="flex-1 hover:underline underline-offset-4">
-            <RouterLink class=" text-[#0d0d0d]" to="/blogs">Blogs</RouterLink>
-          </li>
-          <li class="flex-1 hover:underline underline-offset-4">
-            <RouterLink class=" text-[#0d0d0d]" to="/photogallery">Photo Gallery</RouterLink>
-          </li>
-        </ul>
-      </div>
+    <div class="  w-[285px] mx-auto max-w-full mt-[45px]">
 
 
-      <div class="md:col-span-1 flex justify-end col-span-2 items-center gap-4">
-        <!-- 如果已登录 -->
-        <template v-if="user">
-          <span class="text-sm   text-[#0d0d0d] truncate max-w-[160px]">{{ user.email }}</span>
-          <img :src=user.user_metadata.avatar alt="">
-          <div class="cursor-pointer   rounded-2xl bg-[#faae2b] px-5 py-2 text-[#00473e] hover:bg-[#fcc419]"
-            @click="out">
-            Logout</div>
-        </template>
+      <ul class=" flex text-center gap-[45px]">
+        <li class="flex-1  text-[#1A1A1A]  underline-offset-4  hover:bg-[#3F51B5] px-3 py-1 hover:text-white ">
+          <RouterLink class="  " to="/about">Home</RouterLink>
+        </li>
+        <li class="flex-1   text-[#1A1A1A] underline-offset-4  hover:bg-[#3F51B5] px-3 py-1 hover:text-white">
+          <RouterLink class="" to="/about">About</RouterLink>
+        </li>
+        <li class="flex-1   text-[#1A1A1A]  underline-offset-4  hover:bg-[#3F51B5] px-3 py-1 hover:text-white">
+          <RouterLink class="" to="/vlogs">Vlogs</RouterLink>
+        </li>
+        <!-- <li class="flex-1 hover:underline underline-offset-4">
+          <RouterLink class=" text-[#1A1A1A]" to="/blogs">Blogs</RouterLink>
+        </li>
+        <li class="flex-1 hover:underline underline-offset-4">
+          <RouterLink class=" text-[#1A1A1A]" to="/photogallery">Photo Gallery</RouterLink>
+        </li> -->
+      </ul>
 
-        <!-- 如果未登录 -->
-        <template v-else>
-          <div class="cursor-pointer  shadow-2xl  rounded-2xl bg-[#faae2b] px-5 py-2 text-[#00473e] hover:bg-[#fcc419] "
-            @click="my_modal_3.showModal()">Login</div>
-          <div class="cursor-pointer  rounded-2xl bg-[#faae2b] px-5 py-2 text-[#00473e] hover:bg-[#fcc419] "
-            @click="my_modal_4.showModal()">Register</div>
-        </template>
-      </div>
+
+
+
     </div>
 
 
