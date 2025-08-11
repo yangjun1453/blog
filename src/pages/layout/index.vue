@@ -19,10 +19,16 @@
           <component :is="isOpen ? PhX : PhList" :size="40" weight="thin" />
         </div>
         <div v-if="isOpen" class=" text-3xl flex flex-col gap-10 text-center  mt-30 md:hidden items-center">
+          <RouterLink class="px-12 py-3 inline-block  hover:bg-[#3F51B5]  hover:text-white  " to="/home"
+            @click="toggleSidebar">Home
+          </RouterLink>
+          <RouterLink class="  px-12 py-3 inline-block  hover:bg-[#3F51B5]  hover:text-white" to="/about"
+            @click="toggleSidebar">About
+          </RouterLink>
+          <RouterLink class="  px-12 py-3 inline-block  hover:bg-[#3F51B5]  hover:text-white" to="/photogallery"
+            @click="toggleSidebar">Blog
+          </RouterLink>
 
-          <p class="  px-12 py-3 inline-block  hover:bg-[#3F51B5]  hover:text-white">Home</p>
-          <p class="  px-12 py-3 inline-block  hover:bg-[#3F51B5]  hover:text-white">About</p>
-          <p class="  px-12 py-3 inline-block  hover:bg-[#3F51B5]  hover:text-white">Blog</p>
         </div>
         <RouterView v-else></RouterView>
         <div v-if="!isOpen" class="text-center">

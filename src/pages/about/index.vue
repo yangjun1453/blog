@@ -1,6 +1,6 @@
 <template>
   <div class=" mx-auto mt-[118px]">
-    <h1 class="text-[26px] mx-auto text-center mb-[22px]"> About</h1>
+    <h1 class="text-[26px] mx-auto text-center mb-[22px]"> ABOUT</h1>
 
     <p class="mb-7 text-[#555555]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga officia doloremque non
       in mollitia
