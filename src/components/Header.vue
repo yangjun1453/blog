@@ -79,13 +79,13 @@ onMounted(() => {
 
       <ul class=" flex text-center gap-[45px]">
         <li class="flex-1  text-[#1A1A1A]  underline-offset-4  hover:bg-[#3F51B5] px-3 py-1 hover:text-white ">
-          <RouterLink class="  " to="/about">Home</RouterLink>
+          <RouterLink class="  " to="/home">Home</RouterLink>
         </li>
         <li class="flex-1   text-[#1A1A1A] underline-offset-4  hover:bg-[#3F51B5] px-3 py-1 hover:text-white">
           <RouterLink class="" to="/about">About</RouterLink>
         </li>
         <li class="flex-1   text-[#1A1A1A]  underline-offset-4  hover:bg-[#3F51B5] px-3 py-1 hover:text-white">
-          <RouterLink class="" to="/vlogs">Vlogs</RouterLink>
+          <RouterLink class="" to="/photogallery">Blog</RouterLink>
         </li>
         <!-- <li class="flex-1 hover:underline underline-offset-4">
           <RouterLink class=" text-[#1A1A1A]" to="/blogs">Blogs</RouterLink>

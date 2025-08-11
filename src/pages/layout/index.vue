@@ -26,7 +26,7 @@
         </div>
         <RouterView v-else></RouterView>
         <div v-if="!isOpen" class="text-center">
-          <div class="divider mt-20 bg"></div>
+          <div class="divider mt-20  "></div>
           <p class="mx-auto mt-10 text-[13px]">© 2025 Jun’s Blog. All rights reserved.</p>
         </div>
 

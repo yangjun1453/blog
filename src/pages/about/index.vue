@@ -1,39 +1,80 @@
 <template>
-  <div class="flex-1">
-    <h1 class="block md:hidden">June</h1>
-    <div class="lg:flex h-full lg:items-center lg:justify-evenly  md:items-center   md:gap-20  md:ml-30">
-      <div class="h-40 md:h-70 lg:h-90 mt-10 w-70 md:w-100 lg:w-120 mx-auto  lg:mx-0">
-        <img src="/bg3.jpg" alt="" class="w-full  max-h-full object-cover object-[50%_47%] opacity-85 rounded-3xl " />
+  <div class=" mx-auto mt-[118px]">
+    <h1 class="text-[26px] mx-auto text-center mb-[22px]"> About</h1>
 
-      </div>
+    <p class="mb-7 text-[#555555]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga officia doloremque non
+      in mollitia
+      perspiciatis ex
+      impedit, animi ad deserunt, fugit inventore, illum quaerat deleniti est delectus placeat rem. Quia?Lorem, ipsum
+      dolor sit amet consectetur adipisicing elit. Ipsum pariatur optio maiores atque nihil rerum perspiciatis
+      reiciendis dolores, iure, quod veniam quam beatae cupiditate, quos inventore. Incidunt, debitis vitae. Officia.
+    </p>
 
-      <div class="  w-70  mx-auto">
+    <p class="text-[#555555]">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime ullam adipisci ut quasi minima praesentium magni
+      ipsam excepturi dicta fuga, voluptates eius iusto dolores unde dolorum commodi, ad eaque non Lorem ipsum dolor sit
+      amet consectetur adipisicing elit. Asperiores modi voluptate dolores impedit debitis, quia excepturi, commodi ad,
+      earum obcaecati quod quisquam ducimus labore sequi facilis voluptatum tempore. Iste, sequi!
+    </p>
+  </div>
 
-        <div class="lg:w-100">
-          <div class=" mt-7 py-2 mx-auto">
-            <h2 class="font-bold text-2xl text-[#343a40] ">你好</h2>
-            <!-- <span class=" text-4xl  lg:text-6xl border-b-3  ">It's John Doe.</span> -->
-            <span class=" text-4xl  lg:text-6xl border-b-3  ">我是 Jun</span>
-
-          </div>
+  <div>
 
 
-          <div class="text-[#00331E]   ">
-            <span class="text-2xl text-left text-[#343a40] lg:text-3xl lg:w-100  inline-block mt-7 ">
-              一名前端开发者，擅长 Vue、Pinia、TypeScript 与现代前端工程化
-            </span>
-          </div>
-        </div>
+    <div class="mt-[25px]">
+      Skills
+      <ol class="list-disc pl-10 mt-[21px] space-y-2 text-[#555555]">
 
-      </div>
+        <li>
+          HTML-CSS-JavaScript
+        </li>
+        <li>
+          HTML-CSS-JavaScript
+        </li>
+        <li>
+          HTML-CSS-JavaScript
+        </li>
+        <li>
+          HTML-CSS-JavaScript
+        </li>
+        <li>
+          HTML-CSS-JavaScript
+        </li>
+        <li>
+          HTML-CSS-JavaScript
+        </li>
+        <li>
+          HTML-CSS-JavaScript
+        </li>
+        <li>
+          HTML-CSS-JavaScript
+        </li>
+        <li>
+          HTML-CSS-JavaScript
+        </li>
+        <li>
+          HTML-CSS-JavaScript
+        </li>
+        <li>
+          HTML-CSS-JavaScript
+        </li>
+        <li>
+          HTML-CSS-JavaScript
+        </li>
+      </ol>
+    </div>
+
+
+    <div>
+
 
     </div>
   </div>
-
-
-
+  <SideBar class="mx-auto mt-20" />
 </template>
 
-<script setup></script>
+<script setup>
+import SideBar from "../../components/SideBar.vue";
+</script>
 
 <style scoped></style>

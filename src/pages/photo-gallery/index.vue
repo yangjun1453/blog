@@ -1,7 +1,19 @@
 <template>
-  <!-- 输入框 -->
 
-  <div class="container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm bg-gray-50 mb-5 lg:flex lg:flex-col gap-3">
+  <div class=" w-[270px] mx-auto md:mt-[118px] mt-[120px] flex flex-col justify-between items-center gap-10">
+
+    <div class="avatar mx-auto">
+      <div class="w-24 rounded-full">
+        <img src="https://img.daisyui.com/images/profile/demo/wonderperson@192.webp" />
+      </div>
+    </div>
+    <p class=" text-[26px]">Lorem ipsum dolor</p>
+    <p class=" font-light">Lorem ipsum dolor</p>
+    <SideBar />
+  </div>
+  <div class="divider  md:mt-20 mt-10   mb-[60px] md:w-3/4  md:mx-auto "></div>
+
+  <!-- <div class="container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm bg-gray-50 mb-5 lg:flex lg:flex-col gap-3">
     <input type="text" placeholder="输入博客标题..." class="input" v-model="title" />
     <div class="lg:flex w-full gap-20">
       <div class="lg:flex-1">
@@ -12,7 +24,7 @@
       <div v-html="content" class="prose lg:flex-1  card w-96 bg-base-100 shadow-sm"></div>
     </div>
     <button class="btn lg:btn-lg  btn-md block  btn-primary lg:self-end" @click="onSubmit">发布</button>
-  </div>
+  </div> -->
 
   <BlogCard v-for="item in allBlogs" :key="item.id" :blog="item" class="mb-5" />
 
@@ -22,6 +34,7 @@
 
 <script setup>
 import BlogCard from "../../components/BlogCard.vue";
+import SideBar from "../../components/SideBar.vue";
 import { useUserStore } from "../../store/user";
 import { storeToRefs } from "pinia";
 import markdownit from "markdown-it";

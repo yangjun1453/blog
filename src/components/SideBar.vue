@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isAboutPage" class="flex gap-9  ">
+  <div class="flex gap-7  ">
     <PhInstagramLogo :size="30" color="#1A1A1A" weight="fill"
       class="hover:scale-110 hover:-translate-y-1 transition-transform duration-300" />
     <PhX :size="30" weight="fill" color="#1A1A1A"

@@ -5,24 +5,25 @@ const routes = [
   {
     path: "/",
     component: Layout,
-    redirect: "/about",
-    name: "home",
+    redirect: "/home",
+
     children: [
+      {
+        path: "home", // 添加 home 页面
+        name: "home",
+        component: () => import("../pages/home/index.vue"),
+      },
       {
         path: "about",
         name: "about",
-        component: () => import("../pages/home/index.vue"),
+        component: () => import("../pages/about/index.vue"),
       },
       {
         path: "blogs",
         name: "blogs",
         component: () => import("../pages/blogs/index.vue"),
       },
-      {
-        path: "vlogs",
-        name: "vlogs",
-        component: () => import("../pages/vlogs/index.vue"),
-      },
+
       {
         path: "photogallery",
         name: "photogallery",
