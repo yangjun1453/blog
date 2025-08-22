@@ -22,9 +22,9 @@ export async function SignUp(email: string, password: string): Promise<any> {
 // 获取当前用户
 export async function RetrieveUser(): Promise<{ user: any; error: any }> {
   const { data } = await supabase.auth.getSession();
-  if (data.session) {
-    const accessToken = data.session.access_token;
-    console.log("当前 access_token 是：", accessToken);
+  const accessToken = data.session?.access_token;
+
+  if (accessToken) {
     const {
       data: { user },
       error,

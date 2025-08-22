@@ -1,18 +1,7 @@
 <template>
   <div class=" h-full flex flex-col  ">
     <Header class="sticky top-0 z-50 " />
-
-
-
-
-
-
-
-
     <div class=" w-full flex-1 overflow-auto lg:flex flex flex-col">
-
-
-
       <div
         class=" md:pr-5  md:w-3/4 md:mx-auto  lg:w-1/2  lg:mx-auto  rounded-4xl   p-2  relative flex flex-col flex-1 pb-20  ">
         <div class=" absolute top-3 right-2 md:hidden" @click="toggleSidebar">
@@ -28,7 +17,6 @@
           <RouterLink class="  px-12 py-3 inline-block  hover:bg-[#3F51B5]  hover:text-white" to="/blogs"
             @click="toggleSidebar">Blog
           </RouterLink>
-
         </div>
         <RouterView v-else></RouterView>
         <div v-if="!isOpen" class="text-center">
