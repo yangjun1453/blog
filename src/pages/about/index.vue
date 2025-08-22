@@ -43,7 +43,9 @@
       Projects
       <ol class="list-disc pl-10 mt-[21px] space-y-2 text-[#555555]">
         <li>
-          <a href="https://blog-jade-three-38.vercel.app/#/home">shop demo</a>
+          <a href="https://shop-git-main-yangjun1453s-projects.vercel.app/#/"
+            >shop demo</a
+          >
         </li>
       </ol>
     </div>

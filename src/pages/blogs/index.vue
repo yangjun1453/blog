@@ -1,35 +1,68 @@
 <template>
-
-  <div class=" w-[270px] mx-auto md:mt-[118px] mt-[120px] flex flex-col justify-between items-center gap-10">
-
+  <div
+    class="w-[270px] mx-auto md:mt-[118px] mt-[120px] flex flex-col justify-between items-center gap-10"
+  >
     <div class="avatar mx-auto">
       <div class="w-24 rounded-full">
-        <img src="https://img.daisyui.com/images/profile/demo/wonderperson@192.webp" />
+        <img src="/生成程序员博客头像.png" />
       </div>
     </div>
-    <p class=" text-[26px]">Lorem ipsum dolor</p>
-    <p class=" font-light">Lorem ipsum dolor</p>
+    <p class="text-[26px]">Yang Jun</p>
+    <p class="font-light">Front-End Developer</p>
     <SideBar />
   </div>
-  <div class="divider  md:mt-20 mt-10   mb-[60px] md:w-3/4  md:mx-auto "></div>
+  <div class="divider md:mt-20 mt-10 mb-[60px] md:w-3/4 md:mx-auto"></div>
 
-  <!-- <div class="container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm bg-gray-50 mb-5 lg:flex lg:flex-col gap-3">
-    <input type="text" placeholder="输入博客标题..." class="input" v-model="title" />
+  <div
+    class="container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm mb-5 lg:flex lg:flex-col gap-3"
+  >
+    <input
+      type="text"
+      placeholder="输入博客标题..."
+      class="input"
+      v-model="title"
+    />
     <div class="lg:flex w-full gap-20">
       <div class="lg:flex-1">
-        <textarea class="textarea textarea-sm lg:textarea-lg w-full h-40" placeholder="输入博客内容..."
-          v-model="text"></textarea>
+        <textarea
+          class="textarea textarea-sm lg:textarea-lg w-full h-40"
+          placeholder="输入博客内容..."
+          v-model="text"
+        ></textarea>
       </div>
 
-      <div v-html="content" class="prose lg:flex-1  card w-96 bg-base-100 shadow-sm"></div>
+      <div
+        v-html="content"
+        class="prose lg:flex-1 card w-96 bg-base-100 shadow-sm"
+      ></div>
     </div>
-    <button class="btn lg:btn-lg  btn-md block  btn-primary lg:self-end" @click="onSubmit">发布</button>
-  </div> -->
+    <button
+      class="btn lg:btn-lg btn-md block btn-primary lg:self-end"
+      @click="onSubmit"
+    >
+      发布
+    </button>
+  </div>
 
-  <BlogCard v-for="item in allBlogs" :key="item.id" :blog="item" class="mb-5" />
-
-
-
+  <dialog id="my_modal_1" class="modal">
+    <div class="modal-box">
+      <h3 class="text-lg font-bold">Hello!</h3>
+      <p class="py-4">Press ESC key or click the button below to close</p>
+      <div class="modal-action">
+        <form method="dialog">
+          <!-- if there is a button in form, it will close the modal -->
+          <button class="btn">Close</button>
+        </form>
+      </div>
+    </div>
+  </dialog>
+  <BlogCard
+    v-for="item in allBlogs"
+    :key="item.id"
+    :blog="item"
+    class="mb-5"
+    @delete="onDelete"
+  />
 </template>
 
 <script setup>
@@ -69,7 +102,11 @@ const onSubmit = async () => {
     alert("发布失败，请稍后再试");
   }
 };
-
+const onDelete = async (blogId) => {
+  if (confirm("确定要删除这篇博客吗？")) {
+    await userStore.deleteBlog(blogId);
+  }
+};
 onMounted(() => {
   userStore.fetchAllBlogs();
 });

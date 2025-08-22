@@ -106,3 +106,11 @@ export async function getAvatarDataUri(email: string) {
     backgroundType: ["gradientLinear"],
   }).toDataUri();
 }
+// 删除博客
+export async function DeleteBlog(blogId: string): Promise<void> {
+  const { error } = await supabase.from("blogs").delete().eq("id", blogId);
+
+  if (error) {
+    throw new Error(error.message);
+  }
+}

@@ -7,6 +7,7 @@ import {
   QueryMyBlogs,
   AddBlog,
   QueryAllBlogs,
+  DeleteBlog,
 } from "../api/index";
 export const useUserStore = defineStore("user", {
   actions: {
@@ -44,6 +45,20 @@ export const useUserStore = defineStore("user", {
     },
     async fetchAllBlogs() {
       this.allBlogs = await QueryAllBlogs();
+    },
+    async deleteBlog(blogId: string) {
+      if (!this.user) throw new Error("用户未登录");
+
+      try {
+        await DeleteBlog(blogId);
+        // 本地同步
+        this.blogs = this.blogs.filter((blog) => blog.id !== blogId);
+        this.allBlogs = this.allBlogs.filter((blog) => blog.id !== blogId);
+        console.log("删除成功");
+      } catch (error) {
+        console.error("删除失败:", error);
+        throw new Error("删除失败，请稍后再试");
+      }
     },
   },
   state() {
